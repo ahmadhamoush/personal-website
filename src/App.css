@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left-color: #75BEC8 !important
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right-color: #75BEC8 !important;
+}
+
+.carousel .control-dots .dot.selected,
+.carousel .control-dots .dot:hover {
+    background: #75BEC8;
+}
