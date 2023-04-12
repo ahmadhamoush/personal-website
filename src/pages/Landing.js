@@ -7,7 +7,7 @@ import Terminal from '../components/Terminal'
 import { BsInstagram } from 'react-icons/bs'
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
-import { tablet, mobile } from '../devices'
+import { tablet } from '../devices'
 
 const Container = styled.div `
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
