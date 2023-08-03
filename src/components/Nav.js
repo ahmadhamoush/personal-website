@@ -5,13 +5,17 @@ import { css } from 'styled-components'
 
 
 const Container = styled.div`
+position:sticky;
+top:0;
 display: flex ;
 justify-content: space-between ;
 align-items: center ;
-padding: 30px;
+padding: 15px 30px;
+z-index:1;
+color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
+background-color: ${props=>props.isDarkMode ? '#1e1e1e' : 'white'};
 `
 const Logo = styled.h2`
-color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 font-size:30px;
 cursor: pointer;
 `
@@ -89,14 +93,14 @@ z-index:1;
 
 ${tablet(css`display:none;`)};
 `
-const NavItem = styled.li`
+const NavItem = styled.a`
 margin: 0 15px;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 font-size:20px;
 list-style:none;
 cursor: pointer;
 transition: 0.5s ease-in-out;
-
+text-decoration:none;
 &:hover{
 color:#75BEC8;
 }
@@ -117,15 +121,15 @@ const Nav = ({isDarkMode}) => {
     },[navToggled])
 
   return (
-    <Container>
+    <Container isDarkMode={isDarkMode}>
         <Logo isDarkMode = {isDarkMode}>HAMOUSH</Logo>
         <Input id={'menu' }type={'checkbox'}/>
         <Hamb onClick={()=>setNavToggled(!navToggled)} htmlFor={'menu'}><HambLine isDarkMode={isDarkMode} /></Hamb>
         <NavContainer isDarkMode={isDarkMode}>
-            <NavItem isDarkMode={isDarkMode}>Home</NavItem>
-            <NavItem isDarkMode={isDarkMode}>About</NavItem>
-            <NavItem isDarkMode={isDarkMode}>Projects</NavItem>
-            <NavItem isDarkMode={isDarkMode}>Contact</NavItem>
+            <NavItem href='#home' isDarkMode={isDarkMode}>Home</NavItem>
+            <NavItem href='#about' isDarkMode={isDarkMode}>About</NavItem>
+            <NavItem href='#projects' isDarkMode={isDarkMode}>Projects</NavItem>
+            <NavItem href='#contact' isDarkMode={isDarkMode}>Contact</NavItem>
         </NavContainer>
     </Container>
   )

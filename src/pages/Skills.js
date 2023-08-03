@@ -61,7 +61,7 @@ height:80px;
 
 const Skills = ({isDarkMode}) => {
   return (
-    <Container isDarkMode={isDarkMode}>
+    <Container id='skills' isDarkMode={isDarkMode}>
         <Header isDarkMode={isDarkMode} >Skills</Header>
         <SkillHeader isDarkMode={isDarkMode} >Programming</SkillHeader>
         <Circles>

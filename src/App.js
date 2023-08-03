@@ -1,15 +1,18 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import Landing from './pages/Landing';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import Nav from './components/Nav'
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
 
-
+  useEffect(() => {
+    document.title = "Hamoush"
+ }, []);
   return (
     <div>
       <DarkModeSwitch
@@ -18,7 +21,7 @@ function App() {
       onChange={()=>setDarkMode(!isDarkMode)}
       size={50}
     />
-  
+          <Nav isDarkMode = {isDarkMode} /> 
      <Landing isDarkMode={isDarkMode} />
       <Projects isDarkMode={isDarkMode} />
       <Skills isDarkMode={isDarkMode} />

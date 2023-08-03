@@ -50,7 +50,7 @@ const Projects = ({isDarkMode}) => {
     }
   }, [isMobile])
   return (
-    <Container isDarkMode ={isDarkMode}>
+    <Container id='projects' isDarkMode ={isDarkMode}>
         <Header isDarkMode ={isDarkMode}>Projects</Header>
 
         <Carousel showThumbs={false} infiniteLoop>
@@ -58,7 +58,7 @@ const Projects = ({isDarkMode}) => {
         (
          
           <Cards isMobile={isMobile}>
-            <AnimationOnScroll animateIn="animate__bounceIn">
+            <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img}/>
       </AnimationOnScroll>
 
@@ -71,24 +71,24 @@ const Projects = ({isDarkMode}) => {
       {!isMobile && (
          <Carousel showThumbs={false} infiniteLoop>
         <Cards isMobile={isMobile}>
-        <AnimationOnScroll animateIn="animate__bounceIn">
+        <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img1}/>
       </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__bounceIn">
+      <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img2}/>
       </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__bounceIn">
+      <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img3}/>
       </AnimationOnScroll>
         </Cards>
         <Cards isMobile={isMobile}>
-        <AnimationOnScroll animateIn="animate__bounceIn">
+        <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img4}/>
       </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__bounceIn">
+      <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img5}/>
       </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__bounceIn">
+      <AnimationOnScroll animateIn="animate__fadeInLeft">
             <Card image={img6}/>
       </AnimationOnScroll>
         </Cards>
@@ -96,16 +96,6 @@ const Projects = ({isDarkMode}) => {
     
         )}
 
-        <br />
-        <Header isDarkMode ={isDarkMode}>Upcoming Projects</Header>
-        <Cards>
-        <AnimationOnScroll animateIn="animate__bounceIn">
-            <Card image={img7}/>
-      </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__bounceIn">
-            <Card image={img8}/>
-      </AnimationOnScroll>
-        </Cards>
     </Container>
   )
 }

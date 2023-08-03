@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-import Nav from '../components/Nav'
 import Terminal from '../components/Terminal'
 import { BsInstagram } from 'react-icons/bs'
 import { BsGithub } from 'react-icons/bs'
@@ -98,8 +97,7 @@ const Landing = ({isDarkMode}) => {
 
   return (
 
-    <Container isDarkMode = {isDarkMode}>
-        <Nav isDarkMode = {isDarkMode} /> 
+    <Container id='home' isDarkMode = {isDarkMode}>
        <LandingContainer>
        <AnimationOnScroll initiallyVisible={true}  duration={3} animateIn="animate__fadeIn">
        <Left>
@@ -107,18 +105,18 @@ const Landing = ({isDarkMode}) => {
        <Header isDarkMode = {isDarkMode}>
             Web Developer
         </Header>
-        <Button isDarkMode = {isDarkMode}>Download Resume</Button>
+        <Button onClick={()=>window.location.href='cv.pdf'} isDarkMode = {isDarkMode}>Download Resume</Button>
        </TopLeft>
         <Icons  isDarkMode = {isDarkMode}>
-        <BsInstagram />
-        <BsGithub />
-        <BsLinkedin />
+        <BsInstagram  onClick={()=>window.location.href='https://www.instagram.com/hamoush1/'} />
+        <BsGithub onClick={()=>window.location.href='https://github.com/ahmadhamoush'} />
+        <BsLinkedin onClick={()=>window.location.href='https://www.linkedin.com/in/ahmad-hamoush-63b374204/'}/>
         </Icons>
        
         </Left>
         </AnimationOnScroll>
         <Right>
-        <AnimationOnScroll initiallyVisible={true} animateIn="animate__rollIn">
+        <AnimationOnScroll initiallyVisible={true} animateIn="animate__fadeInRight">
         <Terminal />
       </AnimationOnScroll>
   

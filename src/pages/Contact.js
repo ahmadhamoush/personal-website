@@ -116,7 +116,7 @@ border: ${props=>!props.isDarkMode && '1px solid #75BEC8'};
 const Contact = ({isDarkMode}) => {
   return (
     
-    <Container isDarkMode={isDarkMode}>
+    <Container id='contact' isDarkMode={isDarkMode}>
               <AnimationOnScroll duration={3} animateIn="animate__fadeIn">
               <Header isDarkMode={isDarkMode}>Get In Touch</Header>
       <Icons isDarkMode={isDarkMode}>
@@ -132,7 +132,7 @@ const Contact = ({isDarkMode}) => {
       </Icons>
               </AnimationOnScroll>
   
-      <AnimationOnScroll animateIn="animate__bounceIn">
+      <AnimationOnScroll animateIn="animate__fadeInLeft">
        <Form>
         <InputContainer>
         <Input isDarkMode={isDarkMode} type={'text'} placeholder={'Name*'}/>
