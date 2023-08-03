@@ -1,39 +1,36 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Terminal from '../components/Terminal'
 import { BsInstagram } from 'react-icons/bs'
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { tablet } from '../devices'
+import Nav from '../components/Nav'
 
 const Container = styled.div `
+position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
 display:flex;
 flex-direction:column ;
-justify-content:center;
-align-items:stretch;
 text-align: center ;
-transition:0.5s ease-in-out;
-
+padding:20px;
+min-height:100vh;
 `
 const LandingContainer = styled.div `
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding: 20px;
-
-
+margin-top:50px;
 ${tablet(css`
 flex-direction: column-reverse;
+overflow-x:scroll;
+margin-top:0;
    `)};
 
 `
 
 const Left = styled.div`
-margin-left: 10%;
-height:400px;
 display:flex;
 flex-direction: column ;
 justify-content:space-between;
@@ -62,12 +59,11 @@ const Button = styled.button`
 cursor: pointer;
 background-color:#75BEC8;
 color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
-padding:15px 25px;
-border:none;
+padding:15px 25px; 
 border-radius: 30px ;
 font-size: 20px;
 transition:0.5s ease-in-out;
-border: ${props=>!props.isDarkMode && '1px solid #75BEC8'};
+border: ${props=>!props.isDarkMode ? '1px solid #75BEC8' :'1px solid #1e1e1e'};
 
 &:hover, &:active{
     color: #75BEC8;
@@ -94,12 +90,12 @@ color: ${props=> props.isDarkMode ? 'white' : '#1E1E1E'};
 `
 
 const Landing = ({isDarkMode}) => {
-
   return (
 
     <Container id='home' isDarkMode = {isDarkMode}>
+        <Nav isDarkMode={isDarkMode} /> 
        <LandingContainer>
-       <AnimationOnScroll initiallyVisible={true}  duration={3} animateIn="animate__fadeIn">
+  
        <Left>
        <TopLeft>
        <Header isDarkMode = {isDarkMode}>
@@ -114,11 +110,10 @@ const Landing = ({isDarkMode}) => {
         </Icons>
        
         </Left>
-        </AnimationOnScroll>
         <Right>
-        <AnimationOnScroll initiallyVisible={true} animateIn="animate__fadeInRight">
+ 
         <Terminal />
-      </AnimationOnScroll>
+
   
         </Right>
        </LandingContainer>

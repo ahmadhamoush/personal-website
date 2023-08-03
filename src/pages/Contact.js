@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import { css } from 'styled-components'
-import { AnimationOnScroll } from 'react-animation-on-scroll';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md'
 import { mobile } from '../devices'
-
-const Container = styled.div`
-padding:20px;
-display:flex ;
+import Nav from '../components/Nav'
+const Container = styled.div `
+position:relative;
+background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
+display:flex;
 flex-direction:column ;
-justify-content:center ;
-align-items:center ;
-background-color: ${props=>props.isDarkMode ? '#1E1E1E' : "white"};
+justify-content:center;
+align-items:stretch;
+text-align: center ;
+padding:20px;
+min-height:100vh;
 `
 
 const Header =styled.h1`
@@ -117,7 +118,7 @@ const Contact = ({isDarkMode}) => {
   return (
     
     <Container id='contact' isDarkMode={isDarkMode}>
-              <AnimationOnScroll duration={3} animateIn="animate__fadeIn">
+     <Nav isDarkMode={isDarkMode} /> 
               <Header isDarkMode={isDarkMode}>Get In Touch</Header>
       <Icons isDarkMode={isDarkMode}>
       <ContactDetails>
@@ -130,9 +131,9 @@ const Contact = ({isDarkMode}) => {
       </ContactDetails>
 
       </Icons>
-              </AnimationOnScroll>
+
   
-      <AnimationOnScroll animateIn="animate__fadeInLeft">
+
        <Form>
         <InputContainer>
         <Input isDarkMode={isDarkMode} type={'text'} placeholder={'Name*'}/>
@@ -141,7 +142,7 @@ const Contact = ({isDarkMode}) => {
         <Textarea type={'text'} placeholder={'Message*'}/>
         <Button>Send Email</Button>
        </Form>
-       </AnimationOnScroll>
+
     </Container>
 
 

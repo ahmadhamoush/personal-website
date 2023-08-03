@@ -18,9 +18,3 @@
 .carousel .control-dots .dot:hover {
     background: #75BEC8;
 }
-html{
-    scroll-behavior: smooth;
-}
-body{
-    position: relative;
-}

@@ -119,6 +119,7 @@ const [data,setData] =useState({info:false,skills:false,projects:false})
         .typeString(`Priority 1 // local / scanning... <br/>`)
         .typeString(`scanning ports...  <br/>`)
         .typeString(`BACKDOOR FOUND (13.66.23.12.00110044) <br/>`)
+  
         .typeString(`BRUTE.EXE -r -z <br/>`)
         .typeString(`...locating vulnerabilities...' <br/>`)
         .typeString(`...vulnerabilities found... <br/>`)

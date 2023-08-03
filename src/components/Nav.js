@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import styled from 'styled-components'
 import { tablet } from '../devices'
 import { css } from 'styled-components'
-
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
 position:sticky;
@@ -11,7 +11,7 @@ display: flex ;
 justify-content: space-between ;
 align-items: center ;
 padding: 15px 30px;
-z-index:1;
+z-index:1111;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 background-color: ${props=>props.isDarkMode ? '#1e1e1e' : 'white'};
 `
@@ -100,7 +100,6 @@ font-size:20px;
 list-style:none;
 cursor: pointer;
 transition: 0.5s ease-in-out;
-text-decoration:none;
 &:hover{
 color:#75BEC8;
 }
@@ -126,12 +125,15 @@ const Nav = ({isDarkMode}) => {
         <Input id={'menu' }type={'checkbox'}/>
         <Hamb onClick={()=>setNavToggled(!navToggled)} htmlFor={'menu'}><HambLine isDarkMode={isDarkMode} /></Hamb>
         <NavContainer isDarkMode={isDarkMode}>
-            <NavItem href='#home' isDarkMode={isDarkMode}>Home</NavItem>
-            <NavItem href='#about' isDarkMode={isDarkMode}>About</NavItem>
-            <NavItem href='#projects' isDarkMode={isDarkMode}>Projects</NavItem>
-            <NavItem href='#contact' isDarkMode={isDarkMode}>Contact</NavItem>
+        <Link style={{textDecoration:'none'}} to='/'><NavItem isDarkMode={isDarkMode}>Home</NavItem></Link>
+        <Link style={{textDecoration:'none'}} to='/about'><NavItem isDarkMode={isDarkMode}>About</NavItem></Link>
+        <Link style={{textDecoration:'none'}} to='/projects'><NavItem isDarkMode={isDarkMode}>Projects</NavItem></Link>
+        <Link style={{textDecoration:'none'}} to='/skills'><NavItem isDarkMode={isDarkMode}>Skills</NavItem></Link>
+        <Link style={{textDecoration:'none'}} to='/contact'><NavItem isDarkMode={isDarkMode}>Contact</NavItem></Link>
         </NavContainer>
     </Container>
+ 
+         
   )
 }
 

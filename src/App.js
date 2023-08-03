@@ -5,7 +5,8 @@ import Landing from './pages/Landing';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
-import Nav from './components/Nav'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -14,19 +15,30 @@ function App() {
     document.title = "Hamoush"
  }, []);
   return (
-    <div>
-      <DarkModeSwitch
-      style={{ marginBottom: '2rem', position:'absolute', right:'30px', top:'100px',zIndex:1}}
+<BrowserRouter>
+<DarkModeSwitch
+      style={{ marginBottom: '2rem', position:'absolute', right:'30px', top:'130px',zIndex:1}}
       checked={isDarkMode}
       onChange={()=>setDarkMode(!isDarkMode)}
       size={50}
     />
-          <Nav isDarkMode = {isDarkMode} /> 
-     <Landing isDarkMode={isDarkMode} />
-      <Projects isDarkMode={isDarkMode} />
-      <Skills isDarkMode={isDarkMode} />
-      <Contact isDarkMode={isDarkMode} />
-    </div>
+      <Routes>
+        <Route index path="/" element={<Landing isDarkMode={isDarkMode} />}/>
+          {/* <Route path="about" element={<Blogs />} /> */}
+          <Route path="/contact" element={<Contact isDarkMode={isDarkMode}/>} />
+          <Route path="/projects" element={<Projects isDarkMode={isDarkMode} />} />
+          <Route path="/skills" element={<Skills isDarkMode={isDarkMode}/>} />
+
+          {/* <Route path="*" element={<NoPage />} /> */}
+
+      </Routes>
+   
+    </BrowserRouter>
+
+
+  
+
+
   );
 }
 

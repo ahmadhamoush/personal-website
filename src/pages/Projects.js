@@ -1,7 +1,5 @@
 import React, { useState,useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel';
-import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from 'styled-components'
 import Card from '../components/Card'
@@ -11,14 +9,19 @@ import img3 from '../images/img3.png'
 import img4 from '../images/img4.png'
 import img5 from '../images/img5.png'
 import img6 from '../images/img6.png'
-import img7 from '../images/img7.jpg'
-import img8 from '../images/img8.jpg'
-
+// import img7 from '../images/img7.jpg'
+// import img8 from '../images/img8.jpg'
+import Nav from '../components/Nav'
 const images = [img1,img2,img3,img4,img5,img6]
 
-const Container = styled.div`
-padding:40px;
-background-color: ${props=>props.isDarkMode ? '#1E1E1E' : "white"};
+const Container = styled.div `
+position:relative;
+background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
+display:flex;
+flex-direction:column ;
+text-align: center ;
+padding:20px;
+min-height:100vh;
 `
 const Cards = styled.div`
 display: flex ;
@@ -51,6 +54,7 @@ const Projects = ({isDarkMode}) => {
   }, [isMobile])
   return (
     <Container id='projects' isDarkMode ={isDarkMode}>
+        <Nav  isDarkMode={isDarkMode} /> 
         <Header isDarkMode ={isDarkMode}>Projects</Header>
 
         <Carousel showThumbs={false} infiniteLoop>
@@ -58,9 +62,9 @@ const Projects = ({isDarkMode}) => {
         (
          
           <Cards isMobile={isMobile}>
-            <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
             <Card image={img}/>
-      </AnimationOnScroll>
+
 
             </Cards>
           
@@ -71,26 +75,26 @@ const Projects = ({isDarkMode}) => {
       {!isMobile && (
          <Carousel showThumbs={false} infiniteLoop>
         <Cards isMobile={isMobile}>
-        <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
             <Card image={img1}/>
-      </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
+ 
             <Card image={img2}/>
-      </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
+    
             <Card image={img3}/>
-      </AnimationOnScroll>
+   
         </Cards>
         <Cards isMobile={isMobile}>
-        <AnimationOnScroll animateIn="animate__fadeInLeft">
+     
             <Card image={img4}/>
-      </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
+    
             <Card image={img5}/>
-      </AnimationOnScroll>
-      <AnimationOnScroll animateIn="animate__fadeInLeft">
+ 
+ 
             <Card image={img6}/>
-      </AnimationOnScroll>
+ 
         </Cards>
         </Carousel >
     
