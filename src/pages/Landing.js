@@ -24,7 +24,6 @@ padding: 20px;
 margin-top:50px;
 ${tablet(css`
 flex-direction: column-reverse;
-overflow-x:scroll;
 margin-top:0;
    `)};
 

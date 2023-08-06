@@ -9,7 +9,6 @@ position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
 display:flex;
 flex-direction:column ;
-
 text-align: center ;
 padding:20px;
 min-height:100vh;
@@ -30,6 +29,7 @@ const Circles = styled.div `
 display:flex;
 justify-content:center;
 align-items:center;
+
 flex-wrap:wrap;`
 
 const Circle = styled.div `

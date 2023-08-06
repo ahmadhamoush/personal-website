@@ -10,8 +10,6 @@ position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
 display:flex;
 flex-direction:column ;
-justify-content:center;
-align-items:stretch;
 text-align: center ;
 padding:20px;
 min-height:100vh;

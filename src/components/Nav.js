@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import styled from 'styled-components'
-import { tablet } from '../devices'
+import {tablet } from '../devices'
 import { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -10,10 +10,13 @@ top:0;
 display: flex ;
 justify-content: space-between ;
 align-items: center ;
-padding: 15px 30px;
+padding: 20px;
 z-index:1111;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 background-color: ${props=>props.isDarkMode ? '#1e1e1e' : 'white'};
+${tablet(css`
+padding:0px;
+`)};
 `
 const Logo = styled.h2`
 font-size:30px;
