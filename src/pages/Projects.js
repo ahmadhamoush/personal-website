@@ -12,7 +12,7 @@ import img8 from '../images/img8.jpg'
 import img9 from '../images/img9.jpg'
 import Nav from '../components/Nav'
 import { Link } from 'react-router-dom';
-const images = [img7,img8,img9,img3,img1,img2,img4,img5,img6]
+// const images = [img7,img8,img9,img3,img1,img2,img4,img5,img6]
 
 const Container = styled.div `
 position:relative;

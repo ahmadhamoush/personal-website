@@ -10,6 +10,7 @@ import img9 from './images/skills/bs.png'
 import img10 from './images/skills/mongo.webp'
 import img11 from './images/skills/node.webp'
 import img12 from './images/skills/sql.webp'
+import img13 from './images/skills/next.svg'
 
 const programming = [{
         id: 0,
@@ -66,6 +67,10 @@ const backend = [{
     {
         img: img12,
         level: 'Intermediate'
+    },
+    {
+        img: img13,
+        level: 'Advanced'
     },
 ]
 

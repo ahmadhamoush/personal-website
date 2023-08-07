@@ -36,33 +36,43 @@ const Circle = styled.div `
 background-image: url(${props=>props.bg}) ;
 width:120px;
 height:120px;
-background-position:center ;
-background-size:cover ;
+background-position:center;
+background-size:cover;
 border-radius:50%;
 margin: 15px;
 cursor: pointer;
 transition:0.5s ease-in-out;
 
 &:hover{
-  width:130px;
-  height:130px;
+  transform:scale(1.1);
+}
+&:hover::after{
+  opacity:1
+}
+&::after{
+  content: '${props=>props.level}';
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:16px;
+  background-color:#0000009e;
+  width:inherit;
+  height:inherit;
+  border-radius:inherit;
+  z-index:1111;
+  color:#fff;
+  opacity:0;
+  transition:0.5s ease-in-out;
 }
 ${tablet(css`
   width:100px;
 height:100px;
-&:hover{
-  width:110px;
-  height:110px;
-}
   `)}
   ${mobile(css`
   width:80px;
 height:80px;
-&:hover{
-  width:90px;
-  height:90px;
-}
   `)}`
+
 
 const Skills = ({isDarkMode}) => {
   return (
@@ -74,7 +84,7 @@ const Skills = ({isDarkMode}) => {
            {skills[0].map(item=>{
             return(
     
-                  <Circle key={item.id} bg={item.img} />
+                  <Circle level={item.level} key={item.id} bg={item.img} />
      
           
             )
@@ -85,7 +95,7 @@ const Skills = ({isDarkMode}) => {
            {skills[1].map(item=>{
             return(
  
-              <Circle key={item.id} bg={item.img} />
+              <Circle level={item.level} key={item.id} bg={item.img} />
  
             )
            })}
@@ -95,7 +105,7 @@ const Skills = ({isDarkMode}) => {
            {skills[2].map(item=>{
             return(
   
-              <Circle key={item.id} bg={item.img} />
+              <Circle level={item.level} key={item.id} bg={item.img} />
 
             )
            })}

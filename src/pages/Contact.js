@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { css } from 'styled-components'
 import { BsFillTelephoneFill } from 'react-icons/bs'
@@ -18,7 +18,6 @@ min-height:100vh;
 const Header =styled.h1`
 font-size:30px;
 padding:20px 50px ;
-text-align: left ;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 `
 const Form = styled.div`
@@ -113,6 +112,11 @@ border: ${props=>!props.isDarkMode && '1px solid #75BEC8'};
 `
 
 const Contact = ({isDarkMode}) => {
+
+  const [email,setEmail] = useState('')
+  const [name,setName] = useState('')
+  const [message,setMessage] = useState('')
+
   return (
     
     <Container id='contact' isDarkMode={isDarkMode}>
@@ -134,10 +138,10 @@ const Contact = ({isDarkMode}) => {
 
        <Form>
         <InputContainer>
-        <Input isDarkMode={isDarkMode} type={'text'} placeholder={'Name*'}/>
-        <Input isDarkMode={isDarkMode} type={'text'} placeholder={'Email*'}/>
+        <Input value={name} onChange={(e)=>setName(e.target.value)} isDarkMode={isDarkMode} type={'text'} placeholder={'Name*'}/>
+        <Input value={email} onChange={(e)=>setEmail(e.target.value)} isDarkMode={isDarkMode} type={'email'} placeholder={'Email*'}/>
         </InputContainer>
-        <Textarea type={'text'} placeholder={'Message*'}/>
+        <Textarea value={message} onChange={(e)=>setMessage(e.target.value)} type={'text'} placeholder={'Message*'}/>
         <Button>Send Email</Button>
        </Form>
 
