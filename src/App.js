@@ -25,7 +25,6 @@ function App() {
     />
       <Routes>
         <Route index path="/" element={<Landing isDarkMode={isDarkMode} />}/>
-          {/* <Route path="about" element={<Blogs />} /> */}
           <Route path="/contact" element={<Contact isDarkMode={isDarkMode}/>} />
           <Route path="/projects" element={<Projects isDarkMode={isDarkMode} />} />
           <Route path="/skills" element={<Skills isDarkMode={isDarkMode}/>} />
