@@ -98,7 +98,7 @@ const Landing = ({isDarkMode}) => {
        <Left>
        <TopLeft>
        <Header isDarkMode = {isDarkMode}>
-            Web Developer
+            Full-Stack Developer
         </Header>
         <Button onClick={()=>window.location.href='cv.pdf'} isDarkMode = {isDarkMode}>Download Resume</Button>
        </TopLeft>

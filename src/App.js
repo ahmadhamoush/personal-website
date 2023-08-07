@@ -7,6 +7,7 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
+import ServicesList from './pages/Services';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route index path="/" element={<Landing isDarkMode={isDarkMode} />}/>
           <Route path="/contact" element={<Contact isDarkMode={isDarkMode}/>} />
           <Route path="/projects" element={<Projects isDarkMode={isDarkMode} />} />
+          <Route path="/services" element={<ServicesList isDarkMode={isDarkMode}/>} />
           <Route path="/skills" element={<Skills isDarkMode={isDarkMode}/>} />
            <Route path="/about" element={<About isDarkMode={isDarkMode}/>} />
 

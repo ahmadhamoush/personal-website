@@ -97,7 +97,7 @@ z-index:1;
 ${tablet(css`display:none;`)};
 `
 const NavItem = styled.a`
-margin: 0 15px;
+margin: 0 10px;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 font-size:20px;
 list-style:none;
@@ -131,6 +131,7 @@ const Nav = ({isDarkMode}) => {
         <Link style={{textDecoration:'none'}} to='/'><NavItem isDarkMode={isDarkMode}>Home</NavItem></Link>
         <Link style={{textDecoration:'none'}} to='/about'><NavItem isDarkMode={isDarkMode}>About</NavItem></Link>
         <Link style={{textDecoration:'none'}} to='/projects'><NavItem isDarkMode={isDarkMode}>Projects</NavItem></Link>
+        <Link style={{textDecoration:'none'}} to='/services'><NavItem isDarkMode={isDarkMode}>Services</NavItem></Link>
         <Link style={{textDecoration:'none'}} to='/skills'><NavItem isDarkMode={isDarkMode}>Skills</NavItem></Link>
         <Link style={{textDecoration:'none'}} to='/contact'><NavItem isDarkMode={isDarkMode}>Contact</NavItem></Link>
         </NavContainer>
