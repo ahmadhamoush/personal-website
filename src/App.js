@@ -7,6 +7,7 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
+import { ParallaxProvider } from "react-scroll-parallax"
 import ServicesList from './pages/Services';
 
 
@@ -24,6 +25,8 @@ function App() {
       onChange={()=>setDarkMode(!isDarkMode)}
       size={50}
     />
+    <ParallaxProvider>
+      
       <Routes>
         <Route index path="/" element={<Landing isDarkMode={isDarkMode} />}/>
           <Route path="/contact" element={<Contact isDarkMode={isDarkMode}/>} />
@@ -35,7 +38,7 @@ function App() {
           {/* <Route path="*" element={<NoPage />} /> */}
 
       </Routes>
-   
+      </ParallaxProvider>
     </BrowserRouter>
 
 

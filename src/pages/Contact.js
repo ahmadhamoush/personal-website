@@ -5,6 +5,7 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md'
 import { mobile } from '../devices'
 import Nav from '../components/Nav'
+import { Animate } from 'react-simple-animate'
 const Container = styled.div `
 position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
@@ -121,16 +122,24 @@ const Contact = ({isDarkMode}) => {
     
     <Container id='contact' isDarkMode={isDarkMode}>
      <Nav isDarkMode={isDarkMode} /> 
-              <Header isDarkMode={isDarkMode}>Get In Touch</Header>
+     <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
+     <Header isDarkMode={isDarkMode}>Get In Touch</Header>
+     </Animate>
+        
       <Icons isDarkMode={isDarkMode}>
+      <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
       <ContactDetails>
       <BsFillTelephoneFill />
       <Text isDarkMode={isDarkMode}>+961 78871728</Text>
       </ContactDetails>
+      </Animate>
+      <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
       <ContactDetails>
       <MdEmail />
       <Text isDarkMode={isDarkMode}>hamoush@outlook.com</Text>
       </ContactDetails>
+      </Animate>
+
 
       </Icons>
 
@@ -138,11 +147,19 @@ const Contact = ({isDarkMode}) => {
 
        <Form>
         <InputContainer>
+        <Animate play start={{transform:'scale(0) translateX(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Input value={name} onChange={(e)=>setName(e.target.value)} isDarkMode={isDarkMode} type={'text'} placeholder={'Name*'}/>
+        </Animate>
+        <Animate play start={{transform:'scale(0) translateX(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Input value={email} onChange={(e)=>setEmail(e.target.value)} isDarkMode={isDarkMode} type={'email'} placeholder={'Email*'}/>
+        </Animate>
         </InputContainer>
+        <Animate play start={{transform:'scale(0) translateY(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1',width:'100%'}}>
         <Textarea value={message} onChange={(e)=>setMessage(e.target.value)} type={'text'} placeholder={'Message*'}/>
+        </Animate>
+        <Animate play start={{transform:'scale(0) translateY(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Button>Send Email</Button>
+        </Animate>
        </Form>
 
     </Container>

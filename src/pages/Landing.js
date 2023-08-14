@@ -6,7 +6,8 @@ import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { tablet } from '../devices'
 import Nav from '../components/Nav'
-
+import { Parallax } from "react-scroll-parallax"
+import { Animate } from 'react-simple-animate'
 const Container = styled.div `
 position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
@@ -93,9 +94,11 @@ const Landing = ({isDarkMode}) => {
 
     <Container id='home' isDarkMode = {isDarkMode}>
         <Nav isDarkMode={isDarkMode} /> 
+        <Parallax speed={-10}>
        <LandingContainer>
   
-       <Left>
+     <Animate play start={{transform:'scale(0) translateX(-300px)',opacity:'0'}} end={{transform:'scale(1) translateX(0)',opacity:'1'}}>
+     <Left>
        <TopLeft>
        <Header isDarkMode = {isDarkMode}>
             Full-Stack Developer
@@ -109,13 +112,23 @@ const Landing = ({isDarkMode}) => {
         </Icons>
        
         </Left>
-        <Right>
- 
-        <Terminal />
+     </Animate>
 
-  
-        </Right>
+     <Animate play start={{transform:'translateX(300px) scale(0)',opacity:'0'}} end={{transform:'translateX(0) scale(1)',opacity:'1'}}>
+     <Right>
+ 
+ <Terminal />
+
+
+ </Right>
+     </Animate>
+    
        </LandingContainer>
+       </Parallax>
+      
+      
+ 
+
     </Container>
   )
 }

@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import Nav from '../components/Nav'
 import me from '../images/me.png'
 import { tablet } from '../devices'
+import { Animate } from 'react-simple-animate'
 const Container = styled.div `
 position:relative;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
@@ -77,10 +78,13 @@ const About = ({isDarkMode}) => {
   return (
     <Container id='about' isDarkMode ={isDarkMode}>
         <Nav  isDarkMode={isDarkMode} /> 
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Header isDarkMode ={isDarkMode}>About</Header>
+        </Animate>
+      
 <Wrapper>
     <div>
-
+    <Animate play start={{transform:'scale(0) translateX(-300px)',opacity:'0'}} end={{transform:'scale(1) translateX(0)',opacity:'1'}}>
     <Name>Ahmad Hamoush</Name>
     <ExperienceItem>
         <Title>Experience</Title>
@@ -116,8 +120,13 @@ const About = ({isDarkMode}) => {
       <Description>
       The Complete 2022 Web Development Bootcamp (App Brewery)
       </Description>
+    </Animate>
+   
     </div>
+    <Animate play start={{transform:'scale(0) translateX(300px)',opacity:'0'}} end={{transform:'scale(1) translateX(0)',opacity:'1'}}>
     <Image src={me} />
+    </Animate>
+
 </Wrapper>
 
   

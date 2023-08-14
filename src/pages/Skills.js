@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { mobile, tablet } from '../devices'
 import skills from '../skills-data'
 import Nav from '../components/Nav'
+import { Animate } from 'react-simple-animate'
 
 const Container = styled.div `
 position:relative;
@@ -78,34 +79,51 @@ const Skills = ({isDarkMode}) => {
   return (
     <Container id='skills' isDarkMode={isDarkMode}>
         <Nav  isDarkMode={isDarkMode} /> 
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Header isDarkMode={isDarkMode} >Skills</Header>
+        </Animate>
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <SkillHeader isDarkMode={isDarkMode} >Programming</SkillHeader>
+        </Animate>
+
         <Circles>
            {skills[0].map(item=>{
             return(
-    
+              <Animate play start={{transform:'scale(0) rotate(360deg)',opacity:'0'}} end={{transform:'scale(1) rotate(0)',opacity:'1'}}>
                   <Circle level={item.level} key={item.id} bg={item.img} />
+              </Animate>
+
      
           
             )
            })}
         </Circles>
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <SkillHeader isDarkMode={isDarkMode} >Frontend</SkillHeader>
+        </Animate>
+
         <Circles>
            {skills[1].map(item=>{
             return(
- 
-              <Circle level={item.level} key={item.id} bg={item.img} />
+              <Animate play start={{transform:'scale(0) rotate(360deg)',opacity:'0'}} end={{transform:'scale(1) rotate(0)',opacity:'1'}}>
+          <Circle level={item.level} key={item.id} bg={item.img} />     
+              </Animate>
+              
  
             )
            })}
         </Circles>
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <SkillHeader isDarkMode={isDarkMode} >Backend</SkillHeader>
+        </Animate>
+
         <Circles>
            {skills[2].map(item=>{
             return(
-  
+              <Animate play start={{transform:'scale(0) rotate(360deg)',opacity:'0'}} end={{transform:'scale(1) rotate(0)',opacity:'1'}}>
               <Circle level={item.level} key={item.id} bg={item.img} />
+              </Animate>
+
 
             )
            })}

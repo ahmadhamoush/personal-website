@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Nav from '../components/Nav'
+import { Animate } from 'react-simple-animate';
 
 
 const Container = styled.div `
@@ -78,7 +79,10 @@ const ServicesList = ({isDarkMode}) => {
   return (
     <Container id='services' isDarkMode ={isDarkMode}>
         <Nav  isDarkMode={isDarkMode} /> 
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Header isDarkMode ={isDarkMode}>Services</Header>
+        </Animate>
+
 
  
        
@@ -86,10 +90,16 @@ const ServicesList = ({isDarkMode}) => {
       {services.map((service, index) => (
         <ServicesContainer key={index}>
           <div>
-            <ServiceTitle>{service.title}</ServiceTitle>
+          <Animate play start={{transform:'scale(0) translateY(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
+          <ServiceTitle>{service.title}</ServiceTitle>
             <ServiceDescription>{service.description}</ServiceDescription>
+          </Animate>
+
           </div>
+          <Animate play start={{transform:'scale(0) translateY(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
           <ServicePrice>{service.price}</ServicePrice>
+          </Animate>
+
         </ServicesContainer>
       ))}
     </div>

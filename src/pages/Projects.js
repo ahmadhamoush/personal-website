@@ -12,6 +12,7 @@ import img8 from '../images/img8.jpg'
 import img9 from '../images/img9.jpg'
 import Nav from '../components/Nav'
 import { Link } from 'react-router-dom';
+import { Animate } from 'react-simple-animate'
 // const images = [img7,img8,img9,img3,img1,img2,img4,img5,img6]
 
 const Container = styled.div `
@@ -47,46 +48,51 @@ const Projects = ({isDarkMode}) => {
   return (
     <Container id='projects' isDarkMode ={isDarkMode}>
         <Nav  isDarkMode={isDarkMode} /> 
+        <Animate play start={{transform:'scale(0) translateY(-300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Header isDarkMode ={isDarkMode}>Projects</Header>
+        </Animate>
 
+        <Animate play start={{transform:'scale(0) translateY(300px)',opacity:'0'}} end={{transform:'scale(1) translateY(0)',opacity:'1'}}>
         <Cards>
      
-           <Link to='https://yogawitholynda.com'>
-           <Card image={img7}/>
-           </Link>
-           <Link to='https://hireleb.vercel.app'>
-           <Card image={img8}/>
-           </Link>
-           <Link to='https://gifco.vercel.app'>
-           <Card image={img9}/>
-           </Link>
+     <Link to='https://yogawitholynda.com'>
+     <Card image={img7}/>
+     </Link>
+     <Link to='https://hireleb.vercel.app'>
+     <Card image={img8}/>
+     </Link>
+     <Link to='https://gifco.vercel.app'>
+     <Card image={img9}/>
+     </Link>
+
+     <Link to='https://outlinebeirut.vercel.app'>
+<Card image={img3}/>
+</Link>
+ <Link>
+ <Card image={img1}/></Link>
+    <Link>
+    <Card image={img2}/></Link>
+
+
+
+
+
+
+    <Link>
+    <Card image={img4}/></Link>
+
+
+    <Link>
+    <Card image={img5}/></Link>
+
+  <Link to='https://patibon.com'>
+  <Card image={img6}/>
+  </Link>
   
-           <Link to='https://outlinebeirut.vercel.app'>
-    <Card image={img3}/>
-    </Link>
-       <Link>
-       <Card image={img1}/></Link>
-          <Link>
-          <Card image={img2}/></Link>
- 
-   
-    
-    
-   
-     
-          <Link>
-          <Card image={img4}/></Link>
- 
-    
-          <Link>
-          <Card image={img5}/></Link>
- 
-        <Link to='https://patibon.com'>
-        <Card image={img6}/>
-        </Link>
-        
-        </Cards>
- 
+  </Cards>
+
+        </Animate>
+       
        
     
   
